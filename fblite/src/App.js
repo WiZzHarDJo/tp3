@@ -55,11 +55,11 @@ class App extends Component {
             <React.Fragment>
               <Profil
                 source={JeanneImg}
-                nom="D'Arc"
+                nom="d'Arc"
                 prenom="Jeanne"
-                birth="01 janvier 1000"
+                birth="06 janvier 1412"
               />
-              <MyComment/>
+              <MyComment nom="Jeanne d'Arc" commentaire="Boutons les anglais hors de France ! Rejoignez le mouvement gilets d'armures contre la tyrannie patriarchale anglaise #giletarmure "/>
             </React.Fragment>
           )
         }
@@ -71,9 +71,9 @@ class App extends Component {
                 source={MartineImg}
                 nom="XXX"
                 prenom="Martine"
-                birth="20 aout 1980"
+                birth="1954"
               />
-              <MyComment/>
+              <MyComment nom="Martine" commentaire="Venez lire le dernier Martine ! Martine en stage de survie dans la jungle en featuring avec ma pote Dora l'Exploratrice et son singe Chipeur ! "/>
             </React.Fragment>
           )
         }
@@ -85,9 +85,9 @@ class App extends Component {
                 source={ClaudeImg}
                 nom="François"
                 prenom="Claude"
-                birth="30 septembre 1960"
+                birth="1er février 1939"
               />
-              <MyComment/>
+              <MyComment nom="Claude François" commentaire="Ne prenez pas de douche avec un sèche-cheveux à proximité, ou vous allez littéralement faire des étincelles dans votre apartement"/>
             </React.Fragment>
           )
         }

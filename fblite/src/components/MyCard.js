@@ -6,22 +6,22 @@ class MyCard extends Component {
     constructor(props){
         super(props);
         this.state = {
-            color: "white"
+            color: ""
         }
     }
 
     changeStyle(){
-        if(this.state.color==="white")
-        this.setState({color: "blue"});
-        if(this.state.color==="blue")
-        this.setState({color: "white"})
+        if(this.state.color==="")
+        this.setState({color: "#d3d3d3"});
+        if(this.state.color==="#d3d3d3")
+        this.setState({color: ""});
     }
 
     render() {
         const {source, nom, prenom, birth} = this.props;
         return (
             <div>
-                <Card style={{background:this.state.color}} title="Profil">
+                <Card style={{background:this.state.color}}>
                     <img src={source} alt={nom}/>
                     <p>{nom}</p>
                     <p>{prenom}</p>
