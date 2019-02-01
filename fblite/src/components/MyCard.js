@@ -21,7 +21,7 @@ class MyCard extends Component {
         const {source, nom, prenom, birth} = this.props;
         return (
             <div>
-                <Card style={{background:this.state.color}}>
+                <Card style={{background:this.state.color}} title="Profil">
                     <img src={source} alt={nom}/>
                     <p>{nom}</p>
                     <p>{prenom}</p>

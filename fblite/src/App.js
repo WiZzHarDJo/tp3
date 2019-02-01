@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Profil from './containers/Profil';
 import MyComment from './components/MyComment';
 import {Button} from 'antd';
+import JeanneImg from './images/jeanne.jpg';
+import MartineImg from './images/martine.jpg';
+import ClaudeImg from './images/claude.jpg';
 
 import './App.css';
 
@@ -51,7 +54,7 @@ class App extends Component {
           this.state.jeanne && (
             <React.Fragment>
               <Profil
-                source="./images/jeanne.jpg"
+                source={JeanneImg}
                 nom="D'Arc"
                 prenom="Jeanne"
                 birth="01 janvier 1000"
@@ -65,7 +68,7 @@ class App extends Component {
           this.state.martine && (
             <React.Fragment>
               <Profil
-                source="./images/martine.jpg"
+                source={MartineImg}
                 nom="XXX"
                 prenom="Martine"
                 birth="20 aout 1980"
@@ -79,7 +82,7 @@ class App extends Component {
           this.state.claude && (
             <React.Fragment>
               <Profil
-                source="./images/claude.jpg"
+                source={ClaudeImg}
                 nom="François"
                 prenom="Claude"
                 birth="30 septembre 1960"
