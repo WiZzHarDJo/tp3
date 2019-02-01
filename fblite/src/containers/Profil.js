@@ -4,12 +4,14 @@ import MyCard from "./../components/MyCard";
 
 class Profil extends Component {
   render() {
+    const {source, nom, prenom, birth}=this.props;
     return (
       <div className="Profil">
         <MyCard
-        nom={this.props.nom}
-        prenom={this.props.prenom}
-        birth={this.props.birth}
+        source={source}
+        nom={nom}
+        prenom={prenom}
+        birth={birth}
         />
       </div>
     );

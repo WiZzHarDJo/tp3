@@ -18,10 +18,11 @@ class MyCard extends Component {
     }
 
     render() {
-        const {nom, prenom, birth} = this.props;
+        const {source, nom, prenom, birth} = this.props;
         return (
             <div>
                 <Card style={{background:this.state.color}}>
+                    <img src={source} alt={nom}/>
                     <p>{nom}</p>
                     <p>{prenom}</p>
                     <p>{birth}</p>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Profil from './containers/Profil';
 import MyComment from './components/MyComment';
-import MyButton from './components/MyButton'
+import {Button} from 'antd';
 
 import './App.css';
 
@@ -16,20 +16,73 @@ class App extends Component {
     }
   }
 
+  jeanne(){
+    this.setState({
+      jeanne: true,
+      martine:false,
+      claude: false
+    });
+  }
+
+  martine(){
+    this.setState({
+      jeanne: false,
+      martine:true,
+      claude: false
+    });
+  }
+
+  claude(){
+    this.setState({
+      jeanne: false,
+      martine:false,
+      claude: true
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <MyButton name="Jeanne"/>
-        <MyButton name="Martine"/>
-        <MyButton name="Claude"/>
+        <Button onClick={()=>{this.jeanne()}}>Jeanne</Button>
+        <Button onClick={()=>{this.martine()}}>Martine</Button>
+        <Button onClick={()=>{this.claude()}}>Claude</Button>
 
         {
           this.state.jeanne && (
             <React.Fragment>
               <Profil
+                source="./images/jeanne.jpg"
+                nom="D'Arc"
+                prenom="Jeanne"
+                birth="01 janvier 1000"
+              />
+              <MyComment/>
+            </React.Fragment>
+          )
+        }
+
+        {
+          this.state.martine && (
+            <React.Fragment>
+              <Profil
+                source="./images/martine.jpg"
                 nom="XXX"
                 prenom="Martine"
                 birth="20 aout 1980"
+              />
+              <MyComment/>
+            </React.Fragment>
+          )
+        }
+
+        {
+          this.state.claude && (
+            <React.Fragment>
+              <Profil
+                source="./images/claude.jpg"
+                nom="François"
+                prenom="Claude"
+                birth="30 septembre 1960"
               />
               <MyComment/>
             </React.Fragment>
