@@ -15,8 +15,29 @@ class App extends Component {
     this.state = {
       jeanne: true,
       martine: false,
-      claude: false
+      claude: false,
+      superJNb: 0,
+      superMNb: 0,
+      superCNb: 0
     }
+  }
+
+  superJeanne(){
+    this.setState((state) => {
+      return {superJNb: state.superJNb + 1};
+    });
+  }
+
+  superMartine(){
+    this.setState((state) => {
+      return {superMNb: state.superMNb + 1};
+    });
+  }
+
+  superClaude(){
+    this.setState((state) => {
+      return {superCNb: state.superCNb + 1};
+    });
   }
 
   jeanne(){
@@ -44,6 +65,9 @@ class App extends Component {
   }
 
   render() {
+
+    const {superJNb, superMNb, superCNb} = this.state;
+
     return (
       <div className="App">
         <Button onClick={()=>{this.jeanne()}}>Jeanne</Button>
@@ -59,7 +83,11 @@ class App extends Component {
                 prenom="Jeanne"
                 birth="06 janvier 1412"
               />
-              <MyComment nom="Jeanne d'Arc" commentaire="Boutons les anglais hors de France ! Rejoignez le mouvement gilets d'armures contre la tyrannie patriarchale anglaise #giletarmure "/>
+              <div>
+                <MyComment nom="Jeanne d'Arc" commentaire="Boutons les anglais hors de France ! Rejoignez le mouvement gilets d'armures contre la tyrannie patriarchale anglaise #giletarmure "/>
+                <Button icon="like" onClick={()=>{this.superJeanne()}}>C'est super ! &nbsp; {superJNb}</Button>
+              </div>
+              
             </React.Fragment>
           )
         }
@@ -73,7 +101,10 @@ class App extends Component {
                 prenom="Martine"
                 birth="1954"
               />
-              <MyComment nom="Martine" commentaire="Venez lire le dernier Martine ! Martine en stage de survie dans la jungle en featuring avec ma pote Dora l'Exploratrice et son singe Chipeur ! "/>
+              <div>
+                <MyComment nom="Martine" commentaire="Venez lire le dernier Martine ! Martine en stage de survie dans la jungle en featuring avec ma pote Dora l'Exploratrice et son singe Chipeur ! "/>  
+                <Button icon="like" onClick={()=>{this.superMartine()}}>C'est super ! &nbsp; {superMNb}</Button>
+              </div>
             </React.Fragment>
           )
         }
@@ -87,7 +118,10 @@ class App extends Component {
                 prenom="Claude"
                 birth="1er février 1939"
               />
-              <MyComment nom="Claude François" commentaire="Ne prenez pas de douche avec un sèche-cheveux à proximité, ou vous allez littéralement faire des étincelles dans votre apartement"/>
+              <div>
+                <MyComment nom="Claude François" commentaire="Ne prenez pas de douche avec un sèche-cheveux à proximité, ou vous allez littéralement faire des étincelles dans votre apartement"/>
+                <Button icon="like" onClick={()=>{this.superClaude()}}>C'est super ! &nbsp; {superCNb}</Button>
+              </div>
             </React.Fragment>
           )
         }
